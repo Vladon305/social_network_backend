@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { SequelizeModule } from '@nestjs/sequelize'
-import { User } from './users/users.model'
+import { User } from './users/entities/users.entity'
 import { UsersModule } from './users/users.module'
 import { RolesController } from './roles/roles.controller'
 import { RolesModule } from './roles/roles.module'
-import { Role } from './roles/roles.model'
-import { UserRoles } from './roles/user-roles.model'
+import { Role } from './roles/entities/roles.entity'
+import { UserRoles } from './roles/entities/user-roles.entity'
+import { AuthModule } from './auth/auth.module'
 
 @Module({
   imports: [
@@ -25,7 +26,8 @@ import { UserRoles } from './roles/user-roles.model'
       autoLoadModels: true
     }),
     UsersModule,
-    RolesModule
+    RolesModule,
+    AuthModule
   ],
   controllers: [RolesController],
   providers: []

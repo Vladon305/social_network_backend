@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common'
 import { SequelizeModule } from '@nestjs/sequelize'
-import { User } from 'src/users/users.model'
+import { User } from 'src/users/entities/users.entity'
 import { RolesController } from './roles.controller'
-import { Role } from './roles.model'
+import { Role } from './entities/roles.entity'
 import { RolesService } from './roles.service'
-import { UserRoles } from './user-roles.model'
+import { UserRoles } from './entities/user-roles.entity'
 
 @Module({
   providers: [RolesService],
