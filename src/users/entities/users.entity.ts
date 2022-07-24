@@ -53,6 +53,10 @@ export class User extends Model<User, userCreationAttrs> {
   @Column({ type: DataType.STRING, allowNull: true })
   banReason: string
 
+  @ApiProperty({ example: '[User1, User2]', description: 'Массив пользователей' })
+  @Column({ type: DataType.ARRAY(DataType.JSONB), defaultValue: [] })
+  friends: any[]
+
   @BelongsToMany(() => Role, () => UserRoles)
   roles: Role[]
 

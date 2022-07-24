@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module'
 import { PostsModule } from './posts/posts.module'
 import { Post } from './posts/entities/post.entity'
 import { FilesModule } from './files/files.module'
+import { FriendsModule } from './friends/friends.module';
 import * as path from 'path'
 
 @Module({
@@ -37,7 +38,8 @@ import * as path from 'path'
     RolesModule,
     AuthModule,
     PostsModule,
-    FilesModule
+    FilesModule,
+    FriendsModule
   ],
   controllers: [RolesController],
   providers: []

@@ -8,11 +8,6 @@ export class CreateUserDto {
   @Length(3)
   readonly name: string
 
-  @ApiProperty({ example: 'Иванов', description: 'Фамилия пользователя' })
-  @IsString({ message: 'Должно быть строкой' })
-  @Length(3)
-  readonly surname: string
-
   @ApiProperty({ example: 'user@mail.ru', description: 'Почтовый адрес' })
   @IsString({ message: 'Должно быть строкой' })
   @IsEmail({}, { message: 'Некорректный email' })

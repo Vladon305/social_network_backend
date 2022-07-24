@@ -40,6 +40,5 @@ export class AuthService {
       return user
     }
     throw new UnauthorizedException({ massage: 'Некорректный email или пароль' })
-
   }
 }

@@ -17,19 +17,19 @@ export class PostsService {
     return post
   }
 
-  findAll() {
-    return `This action returns all posts`;
+  async findAll() {
+    return await this.postRepository.findAll({ include: { all: true } })
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} post`;
+  async findOne(id: number) {
+    return await this.postRepository.findOne({ where: { id }, include: { all: true } })
   }
 
-  update(id: number, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} post`;
+  async update(id: number, updatePostDto: UpdatePostDto) {
+    return await this.postRepository.update(updatePostDto, { where: { id } })
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} post`;
+  async remove(id: number) {
+    return await this.postRepository.destroy({ where: { id } })
   }
 }
